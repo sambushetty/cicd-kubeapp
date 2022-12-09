@@ -3,7 +3,7 @@ pipeline {
     agent any
 /*
 	tools {
-        maven "maven3"
+        maven "MAVEN3"
     }
 */
     environment {
@@ -27,21 +27,21 @@ pipeline {
 
         stage('UNIT TEST'){
             steps {
-             //   sh 'mvn test'
+                sh 'mvn test'
 		    echo 'skipping unittest...'
             }
         }
 
         stage('INTEGRATION TEST'){
             steps {
-              //  sh 'mvn verify -DskipUnitTests'
+                sh 'mvn verify -DskipUnitTests'
 		     echo 'skipping unittest...'
             }
         }
 
         stage ('CODE ANALYSIS WITH CHECKSTYLE'){
             steps {
-               // sh 'mvn checkstyle:checkstyle'
+                sh 'mvn checkstyle:checkstyle'
 		     echo 'skipping unittest...'
             }
             post {
